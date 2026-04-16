@@ -49,22 +49,38 @@ export const BUSINESS = {
   },
 
   seo: {
-    defaultTitle: "Otea Lab | Desarrollo de Software Guatemala",
+    defaultTitle: {
+      es: "Otea Lab | Desarrollo de Software Guatemala",
+      en: "Otea Lab | Software Development Guatemala",
+    },
     titleTemplate: "%s | Otea Lab",
     defaultDescription: {
       es: "Desarrollo web y móvil, cloud y consultoría técnica. Full-Stack Developer y Tech Lead con 6+ años en Guatemala e internacional.",
       en: "Web and mobile development, cloud solutions and technical consulting. Full-Stack Developer and Tech Lead with 6+ years, based in Guatemala.",
     },
-    keywords: [
-      "desarrollador web Guatemala",
-      "freelance developer Guatemala",
-      "full-stack developer Guatemala",
-      "desarrollo de aplicaciones móviles",
-      "React Node.js Angular Guatemala",
-      "consultoría transformación digital",
-      "Otea Lab",
-    ],
-    ogImage: "/og-image.png", // crear en Fase 4
+    keywords: {
+      es: [
+        "desarrollador web Guatemala",
+        "freelance developer Guatemala",
+        "full-stack developer Guatemala",
+        "desarrollo de aplicaciones móviles",
+        "React Node.js Angular Guatemala",
+        "consultoría transformación digital",
+        "desarrollo software a medida",
+        "Otea Lab",
+      ],
+      en: [
+        "software development Guatemala",
+        "freelance developer Guatemala",
+        "full-stack developer Guatemala",
+        "mobile app development",
+        "React Node.js Angular Guatemala",
+        "digital transformation consulting",
+        "custom software development",
+        "Otea Lab",
+      ],
+    },
+    ogImage: "/og-image.png",
   },
 } as const;
 

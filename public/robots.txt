@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://otealab.com/sitemap-index.xml
