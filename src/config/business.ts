@@ -33,7 +33,7 @@ export const BUSINESS = {
   logoText: "/assets/logo-texto.svg", // versión solo texto para el header
 
   contact: {
-    email: "josue@otealab.com", // configurar cuando el dominio esté activo
+    email: "admin@otealab.com", // configurar cuando el dominio esté activo
     emailPersonal: "godinezjosue@hotmail.com",
     phone: "+502 59238059",
     location: {
@@ -74,24 +74,34 @@ export const BUSINESS = {
  * These values are here for reference and for use in JS/TS logic (e.g., canvas, SVG).
  */
 export const COLORS = {
-  primary: "#1E40AF",   // azul profundo — brand principal
-  primaryDark: "#1D4ED8", // hover states
-  primaryDeep: "#1E3A8A", // fondos oscuros
-  accent: "#0EA5E9",    // azul cielo — highlights, CTAs secundarios
-  accentLight: "#E0F2FE", // fondos de acento suave
-  dark: "#0F172A",      // texto principal
-  neutral: "#64748B",   // texto secundario
-  surface: "#FFFFFF",   // fondo de cards
-  background: "#F0F9FF", // fondo general (tinte azul muy suave)
-  border: "#E2E8F0",    // bordes y divisores
+  // Primarios
+  primary:      "#00A090",  // Teal primary — brand principal / CTAs
+  primaryDark:  "#00A898",  // Teal deep — hover states
+  primaryDeep:  "#182030",  // Dark navy — hero / secciones oscuras
+
+  // Teal scale
+  accent:       "#5AB8A8",  // Teal medium — highlights secundarios
+  accentLight:  "#E0F5F0",  // Mint — fondos suaves
+  tealLight:    "#60C0B0",  // Teal light
+
+  // Fondos oscuros
+  darkBg:       "#242D36",  // Dark background
+  navyMedium:   "#202830",  // Navy medium
+
+  // Neutrals
+  dark:         "#182030",  // texto principal
+  neutral:      "#64748B",  // texto secundario
+  surface:      "#FFFFFF",  // fondo de cards
+  background:   "#E0F5F0",  // Mint — fondo general
+  border:       "#C0DED9",  // bordes teal-tinted
 } as const;
 
 /**
  * Typography — mirrors tailwind.config.ts font families.
  */
 export const FONTS = {
-  heading: "Inter",   // títulos — definir en Fase 1
-  body: "Inter",      // cuerpo — cambiar si se elige otra fuente
+  heading: "Outfit",
+  body: "Outfit",
 } as const;
 
 /**

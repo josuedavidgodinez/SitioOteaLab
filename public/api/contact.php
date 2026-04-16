@@ -8,7 +8,7 @@
  */
 
 // ── Configuración ─────────────────────────────────────────────────────────────
-const MAIL_TO      = 'josue@otealab.com';       // donde recibirás los mensajes
+const MAIL_TO      = 'admin@otealab.com';       // donde recibirás los mensajes
 const MAIL_FROM    = 'noreply@otealab.com';      // remitente (debe ser de tu dominio en IONOS)
 const MAIL_SUBJECT = '[Otea Lab] Nueva solicitud de cotización';
 const ALLOWED_ORIGIN = 'https://otealab.com';    // cambia a tu dominio real

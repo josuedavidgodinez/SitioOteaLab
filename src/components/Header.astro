@@ -21,30 +21,24 @@ const alternateLang = lang === "es" ? "EN" : "ES";
 >
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <nav
-      class="flex items-center justify-between h-40"
+      class="flex items-center justify-between h-24"
       aria-label="Navegación principal"
     >
       <!-- Logo + Name -->
       <a
         href={lang === "es" ? "/" : "/en"}
-        class=""
+        class="flex items-center gap-10"
       >
-        <div class="grid grid-cols-24">
-          <div class="col-span-12  hidden sm:block">
-            <img
-              src={BUSINESS.logo}
-              alt={`${BUSINESS.name} logo`}
-              class="h-30 w-auto"
-            />
-          </div>
-          <div class="col-span-12 sm:col-span-24 flex items-center">
-            <img
-              src={BUSINESS.logoText}
-              alt={`${BUSINESS.name} logotype`}
-              class="h-30 w-auto"
-            />
-          </div>
-        </div>
+        <img
+          src={BUSINESS.logo}
+          alt={`${BUSINESS.name} logo`}
+          class="h-20 w-auto hidden sm:block"
+        />
+        <img
+          src={BUSINESS.logoText}
+          alt={`${BUSINESS.name} logotype`}
+          class="h-8 w-auto"
+        />
       </a>
 
       <!-- Desktop nav -->

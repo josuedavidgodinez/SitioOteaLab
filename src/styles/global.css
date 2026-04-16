@@ -1,28 +1,43 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /**
  * Otea Lab — Design Tokens
  * Tailwind v4: custom tokens are defined here with @theme.
  * Use them as Tailwind classes: bg-primary, text-accent, font-heading, etc.
  */
 @theme {
-  /* Brand colors */
-  --color-primary:      #1E40AF;
-  --color-primary-dark: #1D4ED8;
-  --color-primary-deep: #1E3A8A;
-  --color-accent:       #0EA5E9;
-  --color-accent-light: #E0F2FE;
+  /* Brand colors — primarios */
+  --color-primary:      #00A090;  /* Teal primary */
+  --color-primary-dark: #00A898;  /* Teal deep — hover */
+  --color-primary-deep: #182030;  /* Dark navy — hero / secciones oscuras */
+
+  /* Teal scale */
+  --color-accent:       #5AB8A8;  /* Teal medium */
+  --color-accent-light: #E0F5F0;  /* Mint — tints y fondos suaves */
+  --color-teal-light:   #60C0B0;  /* Teal light */
+
+  /* Fondos oscuros */
+  --color-dark-bg:      #242D36;  /* Dark background */
+  --color-navy-medium:  #202830;  /* Navy medium */
 
   /* Neutrals */
-  --color-dark:         #0F172A;
-  --color-neutral:      #64748B;
+  --color-dark:         #182030;  /* Dark navy — texto principal */
+  --color-neutral:      #64748B;  /* Slate — texto secundario */
   --color-surface:      #FFFFFF;
-  --color-background:   #F0F9FF;
-  --color-border:       #E2E8F0;
+  --color-background:   #E0F5F0;  /* Mint — fondo general */
+  --color-border:       #C0DED9;  /* Teal-tinted border */
 
   /* Typography */
-  --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Base styles */
