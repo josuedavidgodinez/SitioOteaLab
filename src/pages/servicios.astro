@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { services } from '../data/services';
+import { useTranslations } from '../i18n/utils';
+
+const t = useTranslations('es');
+---
+
+<Layout title={t.services.sectionTitle}>
+
+  <!-- Header -->
+  <section class="bg-gradient-to-br from-primary-deep to-primary text-white py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm font-semibold text-accent uppercase tracking-widest mb-3">
+        {t.services.sectionTitle}
+      </p>
+      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold mb-4">
+        {t.services.sectionSubtitle}
+      </h1>
+      <p class="text-lg text-white/75 max-w-2xl mx-auto">
+        Soluciones a medida para empresas en Guatemala, España y Estados Unidos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <article class="bg-surface border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col">
+
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center mb-5 shrink-0">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d={service.icon} />
+            </svg>
+          </div>
+
+          <!-- Title + description -->
+          <h2 class="font-heading font-bold text-dark text-xl mb-3">
+            {service.title.es}
+          </h2>
+          <p class="text-sm text-neutral leading-relaxed mb-5">
+            {service.description.es}
+          </p>
+
+          <!-- Bullets -->
+          <ul class="flex flex-col gap-2 mb-6 flex-1">
+            {service.bullets.es.map((bullet) => (
+              <li class="flex items-start gap-2 text-sm text-neutral">
+                <svg class="w-4 h-4 text-accent shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                </svg>
+                {bullet}
+              </li>
+            ))}
+          </ul>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            {service.tags.map((tag) => (
+              <span class="text-xs font-medium bg-background text-neutral border border-border px-2.5 py-1 rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <!-- CTA -->
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+          >
+            {t.services.cta}
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="bg-background border-t border-border py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-dark mb-3">
+        ¿No encontrás exactamente lo que necesitás?
+      </h2>
+      <p class="text-neutral mb-8">
+        Cuéntame tu proyecto y lo analizamos juntos. Adapto la solución a tus necesidades reales.
+      </p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center bg-primary hover:bg-primary-dark text-white font-semibold px-8 py-3.5 rounded-lg transition-colors"
+      >
+        {t.nav.cta}
+      </a>
+    </div>
+  </section>
+
+</Layout>

@@ -1,11 +1,111 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import PortfolioCard from '../components/PortfolioCard.astro';
+import { useTranslations } from '../i18n/utils';
+import { projects } from '../data/portfolio';
+import { BUSINESS, STATS } from '../config/business';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const t = useTranslations('es');
+const featuredProjects = projects.filter((p) => p.featured);
 ---
 
 <Layout>
-	<Welcome />
+
+  <!-- ── Hero ──────────────────────────────────────────────────── -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-primary-deep via-primary to-primary-dark text-white">
+    <!-- Background grid pattern -->
+    <div class="absolute inset-0 opacity-10"
+      style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 32px 32px;">
+    </div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div class="max-w-3xl">
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold leading-tight mb-6">
+          {t.hero.headline}
+        </h1>
+        <p class="text-lg sm:text-xl text-white/80 max-w-2xl mb-10">
+          {t.hero.subheadline}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/servicios"
+            class="inline-flex items-center justify-center bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-accent-light transition-colors"
+          >
+            {t.hero.ctaPrimary}
+          </a>
+          <a
+            href="/portafolio"
+            class="inline-flex items-center justify-center border border-white/40 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-colors"
+          >
+            {t.hero.ctaSecondary}
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ─────────────────────────────────────────────────── -->
+  <section class="border-b border-border bg-surface">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <dl class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        {[
+          { value: STATS.yearsExperience,    label: t.about.yearsExperience },
+          { value: STATS.projectsDelivered,  label: t.about.projectsCompleted },
+          { value: STATS.clientsServed,      label: t.about.clientsServed },
+          { value: STATS.countries,          label: t.about.countriesWorked },
+        ].map(({ value, label }) => (
+          <div>
+            <dt class="text-3xl font-extrabold text-primary">{value}</dt>
+            <dd class="text-sm text-neutral mt-1">{label}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- ── Portfolio destacado ────────────────────────────────────── -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+      <div>
+        <p class="text-sm font-semibold text-accent uppercase tracking-widest mb-2">
+          {t.portfolio.sectionTitle}
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-dark">
+          {t.portfolio.sectionSubtitle}
+        </h2>
+      </div>
+      <a
+        href="/portafolio"
+        class="shrink-0 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+      >
+        Ver todos →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {featuredProjects.map((project) => (
+        <PortfolioCard project={project} lang="es" />
+      ))}
+    </div>
+  </section>
+
+  <!-- ── CTA contacto ───────────────────────────────────────────── -->
+  <section class="bg-primary-deep text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <h2 class="text-3xl sm:text-4xl font-heading font-extrabold mb-4">
+        {t.contact.sectionSubtitle}
+      </h2>
+      <p class="text-white/70 mb-8 text-lg">
+        {t.site.description}
+      </p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3.5 rounded-lg transition-colors text-lg"
+      >
+        {t.nav.cta}
+      </a>
+    </div>
+  </section>
+
 </Layout>

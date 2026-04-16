@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PortfolioCard from '../../components/PortfolioCard.astro';
+import { projects } from '../../data/portfolio';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
+---
+
+<Layout title={t.portfolio.sectionTitle}>
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-14">
+      <p class="text-sm font-semibold text-accent uppercase tracking-widest mb-3">{t.portfolio.sectionTitle}</p>
+      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-dark mb-4">{t.portfolio.sectionSubtitle}</h1>
+      <p class="text-lg text-neutral max-w-2xl mx-auto">{t.site.description}</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <PortfolioCard project={project} lang="en" />
+      ))}
+    </div>
+  </section>
+</Layout>
