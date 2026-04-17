@@ -35,7 +35,7 @@ export const BUSINESS = {
   contact: {
     email: "admin@otealab.com", // configurar cuando el dominio esté activo
     emailPersonal: "godinezjosue@hotmail.com",
-    phone: "+502 59238059",
+    phone: "+502 55492265",
     location: {
       city: "Guatemala City",
       country: "Guatemala",
@@ -43,10 +43,7 @@ export const BUSINESS = {
     },
   },
 
-  social: {
-    linkedin: "https://linkedin.com/in/josued-godinez-g", // actualizar con URL real
-    github: "https://github.com/josuedavidgodinez", // actualizar con URL real
-  },
+  social: {},
 
   seo: {
     defaultTitle: {

@@ -149,6 +149,33 @@ export const services: Service[] = [
     tags: ["WordPress", "PHP", "Zapier", "Pabbly", "CRM"],
   },
   {
+    id: "ai-integrations",
+    icon: "M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z",
+    title: {
+      es: "Integraciones de IA",
+      en: "AI Integrations",
+    },
+    description: {
+      es: "Incorporamos inteligencia artificial a tus sistemas actuales para automatizar y optimizar procesos internos y externos, sin necesidad de reemplazar tu infraestructura.",
+      en: "We integrate artificial intelligence into your existing systems to automate and optimize internal and external processes, without replacing your current infrastructure.",
+    },
+    bullets: {
+      es: [
+        "Agentes y asistentes con LLMs (GPT, Claude, Gemini)",
+        "Automatización de flujos internos con IA generativa",
+        "Clasificación, extracción y análisis de datos con ML",
+        "Integración con sistemas existentes vía API",
+      ],
+      en: [
+        "Agents and assistants powered by LLMs (GPT, Claude, Gemini)",
+        "Internal workflow automation with generative AI",
+        "Data classification, extraction, and analysis with ML",
+        "Integration with existing systems via API",
+      ],
+    },
+    tags: ["OpenAI", "Claude", "LangChain", "Python", "API"],
+  },
+  {
     id: "consulting",
     icon: "M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605",
     title: {
