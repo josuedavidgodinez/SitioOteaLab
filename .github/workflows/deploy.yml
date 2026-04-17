@@ -46,4 +46,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd ~
-            php composer.phar install --no-dev --optimize-autoloader
+            [ ! -f composer.phar ] && curl -sS https://getcomposer.org/composer-stable.phar -o composer.phar
+            php8.5 composer.phar install --no-dev --optimize-autoloader
