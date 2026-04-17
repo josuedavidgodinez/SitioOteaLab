@@ -173,7 +173,7 @@ export const services: Service[] = [
         "Integration with existing systems via API",
       ],
     },
-    tags: ["OpenAI", "Claude", "LangChain", "Python", "API"],
+    tags: ["OpenAI", "Claude", "MCP", "Python", "API"],
   },
   {
     id: "consulting",
