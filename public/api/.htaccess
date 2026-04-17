@@ -1,0 +1,11 @@
+Options -Indexes
+
+# Solo permite acceso a contact.php; deniega todo lo demás
+<FilesMatch ".*">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+<FilesMatch "^contact\.php$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

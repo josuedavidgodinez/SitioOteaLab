@@ -15,7 +15,7 @@ const serviceOptions = [
   'Otro / No estoy seguro',
 ];
 
-const budgetOptions = Object.values(t.contact.budgetOptions);
+
 ---
 
 <Layout title={t.contact.sectionTitle}>
@@ -105,6 +105,11 @@ const budgetOptions = Object.values(t.contact.budgetOptions);
               required
               class="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-dark placeholder-neutral/50 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition resize-none"
             ></textarea>
+          </div>
+
+          <!-- Honeypot: oculto para humanos, los bots lo llenan -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;tab-index:-1;">
+            <input type="text" name="website" id="hp-website" tabindex="-1" autocomplete="off" />
           </div>
 
           <!-- Submit -->
@@ -215,7 +220,7 @@ const budgetOptions = Object.values(t.contact.budgetOptions);
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const btn = document.getElementById('submit-btn') as HTMLButtonElement;
   const btnLabel = document.getElementById('btn-label') as HTMLSpanElement;
-  const spinner = document.getElementById('btn-spinner') as SVGElement;
+  const spinner = document.getElementById('btn-spinner') as HTMLElement;
   const msgSuccess = document.getElementById('msg-success') as HTMLDivElement;
   const msgError = document.getElementById('msg-error') as HTMLDivElement;
 
@@ -241,8 +246,8 @@ const budgetOptions = Object.values(t.contact.budgetOptions);
         name,
         email,
         service: (form.querySelector('#service') as HTMLSelectElement).value,
-        budget: (form.querySelector('#budget') as HTMLSelectElement).value,
         message,
+        website: (form.querySelector('#hp-website') as HTMLInputElement).value,
       };
 
       const res = await fetch('/api/contact.php', {

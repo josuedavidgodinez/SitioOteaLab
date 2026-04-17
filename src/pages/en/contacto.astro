@@ -45,6 +45,11 @@ const t = useTranslations('en');
             </div>
           </div>
 
+          <!-- Honeypot: oculto para humanos, los bots lo llenan -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;tab-index:-1;">
+            <input type="text" name="website" id="hp-website" tabindex="-1" autocomplete="off" />
+          </div>
+
           <div>
             <label for="message" class="block text-sm font-semibold text-dark mb-1.5">{t.contact.form.message} <span class="text-red-500">*</span></label>
             <textarea id="message" name="message" rows="5" placeholder={t.contact.form.messagePlaceholder} required
@@ -125,7 +130,7 @@ const t = useTranslations('en');
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const btn = document.getElementById('submit-btn') as HTMLButtonElement;
   const btnLabel = document.getElementById('btn-label') as HTMLSpanElement;
-  const spinner = document.getElementById('btn-spinner') as SVGElement;
+  const spinner = document.getElementById('btn-spinner') as HTMLElement;
   const msgSuccess = document.getElementById('msg-success') as HTMLDivElement;
   const msgError = document.getElementById('msg-error') as HTMLDivElement;
 
@@ -149,8 +154,8 @@ const t = useTranslations('en');
         body: JSON.stringify({
           name, email,
           service: (form.querySelector('#service') as HTMLSelectElement).value,
-          budget: (form.querySelector('#budget') as HTMLSelectElement).value,
           message,
+          website: (form.querySelector('#hp-website') as HTMLInputElement).value,
         }),
       });
       const data = await res.json();
